@@ -19,7 +19,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ROOT_PASSWORD: zergling
-          MYSQL_DATABASE: mysql
+          MYSQL_DATABASE: CommunicationSeminarDjango
         ports: ['3306:3306']
     steps:
     - uses: actions/checkout@v3
@@ -34,19 +34,9 @@ jobs:
     - name: Run Migrations
       run: python manage.py migrate
       env:
-          DBENGINE: django.db.backends.mysql
-          DBNAME: mysql
-          DBUSER: root
-          DBPASSWORD: zergling
-          DBHOST: 127.0.0.1
-          DBPORT: $
+          DB_PASSWORD: zergling
     - name: Run Tests
       run: |
         python manage.py test
       env:
-          DBENGINE: django.db.backends.mysql
-          DBNAME: mysql
-          DBUSER: root
-          DBPASSWORD: zergling
-          DBHOST: 127.0.0.1
-          DBPORT: $
+          DB_PASSWORD: zergling

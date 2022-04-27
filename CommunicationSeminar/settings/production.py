@@ -150,6 +150,8 @@ else:
             'PASSWORD': env_get('DB_PASSWORD', '2017%ComSem')
         }
     }
+    
+    print(f"Default database: {dict(item for item in DATABASES['default'].items() if item[0] not in ('PASSWORD'))}")
 
 
 

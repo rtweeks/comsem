@@ -143,15 +143,13 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': 'localhost',
+            'HOST': env_get('DB_HOST', 'localhost'),
             'PORT': env_get('DB_PORT', '3306'),
             'NAME': 'CommunicationSeminarDjango',
             'USER': 'root',
             'PASSWORD': env_get('DB_PASSWORD', '2017%ComSem')
         }
     }
-    
-    print(f"Default database: {dict(item for item in DATABASES['default'].items() if item[0] not in ('PASSWORD'))}")
 
 
 

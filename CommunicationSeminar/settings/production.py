@@ -144,7 +144,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'HOST': 'localhost',
-            'PORT': '3306',
+            'PORT': env_get('DB_PORT', '3306'),
             'NAME': 'CommunicationSeminarDjango',
             'USER': 'root',
             'PASSWORD': env_get('DB_PASSWORD', '2017%ComSem')

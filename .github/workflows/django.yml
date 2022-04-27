@@ -2,7 +2,7 @@ name: Django CI
 
 on:
   push:
-    branches: [ comsem-demo ]
+    branches: [ w ]
   pull_request:
     branches: [ comsem-demo ]
 
